@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>All Products</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+
+body {
+  font-family: Arial, Helvetica, Lucida Handwriting, Sofia, sans-serif;
+}
+
+p {
+  text-align: center;
+  letter-spacing: 3px;
+  border: 2px solid pink;
+  outline: #BD959F solid 10px;
+  margin: auto;  
+  padding: 20px;
+}
+
+p.2 {
+  text-align: left;
+  letter-spacing: 3px;
+  border: 2px solid pink;
+  outline: #BD959F solid 10px;
+  margin: auto;  
+  padding: 20px;
+}
+
+p.big {
+  line-height: 1.8;
+}
+
+
+div.padding {
+  padding: 70px;
+  border: 1px solid pink;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #111;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 15px 20px;
+  text-decoration: none;
+}
+
+.sticky {
+  position: static;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.search{
+    width: 400px;
+    float: right;
+    margin-left: 270px;
+}
+
+.srch{
+    font-family: 'Times New Roman';
+    width: 200px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid #ff7200;
+    margin-top: 13px;
+    color: #fff;
+    border-right: 3;
+    font-size: 16px;
+    float: left;
+    padding: 10px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.button {
+  background-color: #FFA500;
+  border: none;
+  color: white;
+  padding: 18px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.header {
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.p1 {
+  font-family: "Lucida Handwriting", monospace;
+}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: pink;
+}
+
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+div.gallery {
+  border: 1px solid pink;
+}
+
+div.gallery:hover {
+  border: 1px solid pink;
+  opacity: 0.5;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.block {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: orange;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.block:hover {
+  background-color: pink;
+  color: black;
+}
+
+a:hover, a:active {
+  background-color: pink;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  border: 3px solid green; 
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+
+.container {
+  border: 2px solid #ccc;
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 16px;
+  margin: 16px 0
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.container img {
+  float: left;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.container span {
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+@media (max-width: 500px) {
+  .container {
+      text-align: center;
+  }
+  .container img {
+      margin: auto;
+      float: none;
+      display: block;
+  }
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+.form-container .cancel {
+  background-color: red;
+}
+
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="search">
+<input class="srch" type="search" name="" placeholder="Type To Search">
+<button class="button">Search</button>
+</div><br><br><br><br>
+
+<div class="header">
+<h1>
+<p class="p3">ClassyÜ</p>
+</h1>
+</div>
+
+
+<div class="navbar">
+  <a href="file:///D:/COMPUTER/classyu%23home.html">Home</a>
+  
+  <div class="dropdown">
+  <button class="dropbtn">Stationery 
+  <i class="fa fa-caret-down"></i>
+  </button>
+
+  <div class="dropdown-content">
+  <a href="file:///D:/COMPUTER/classyu%23pens-and-refills.html">Pens and Refills</a>
+  <a href="file:///D:/COMPUTER/classyu%23planners-and-calendars.html">Planners and Calendars</a>
+  <a href="file:///D:/COMPUTER/classyu%23notebooks.html">Notebooks</a>
+  <a href="#arts-and-crafts">Arts and Crafts</a>
+  <a href="#acrylic-frame">Acrylic Frame</a>
+  <a href="#acrylic-storage-units">Acrylic Storage Units</a>
+  <a href="#binders">Binders</a>
+  <a href="#highlighter">Highlighter</a>
+  <a href="#office-items">Office Items</a>
+  <a href="#pp-file-boxes">File Boxes</a>
+  <a href="#other-writing-materials">Other Writing Materials</a>
+
+  </div>
+  </div>
+
+  <div class="dropdown">
+  <button class="dropbtn">Furniture 
+  <i class="fa fa-caret-down"></i>
+  </button>
+
+  <div class="dropdown-content">
+  <a href="#beds-and-mattressess">Beds and Mattresses</a>
+  <a href="#cotton-linen-soft-box">Cotton Linen Soft Box</a>
+  <a href="#dining-room-furniture">Dining Room Furniture</a>
+  <a href="#hard-pulp-box">Hard Pulp Box</a>
+  <a href="#living-room-furniture">Living Room Furniture</a>
+  <a href="#other-storage-units">Other Storage Units</a>
+  <a href="#pp-storage-units">PP Storage Units</a>
+  <a href="#pulp-board-box">Pulp Board Box</a>
+  <a href="#rattan-basket">Rattan Basket</a>
+  <a href="#soft-pe-case">Soft PE Case</a>
+  <a href="#stackling-shelves">Stackling Shelves</a>
+  <a href="#stainless-steel-unit-shelves">Stainless Steel Unit Shelves</a>
+
+
+  </div>
+  </div>
+
+  <div class="dropdown">
+  <button class="dropbtn">Fabrics
+  <i class="fa fa-caret-down"></i>
+  </button>
+
+  <div class="dropdown-content">
+  <a href="#bed-linens">Bed Linens</a>
+  <a href="#carpets-rugs-and-mats">Carpets, Rugs, and Mats</a>
+  <a href="#pillows-and-cushions">Pillows and Cushion</a>
+  <a href="#seat-cushions">Seat Cushions</a>
+  <a href="#slippers">Slippers</a>
+  <a href="#towels">Towels</a>
+
+  </div>
+  </div>
+
+  <div class="dropdown">
+  <button class="dropbtn">Houseware
+  <i class="fa fa-caret-down"></i>
+  </button>
+
+  <div class="dropdown-content">
+  <a href="#bathroom-items">Bathroom Items</a>
+  <a href="#cleaning-systems">Cleaning Systems</a>
+  <a href="#cutlery">Cutlery</a>
+  <a href="#hangers">Hangers</a>
+  <a href="#housekeeping-items">Housekeeping Items</a>
+  <a href="#kitchen-items">Kitchen Items</a>
+  <a href="#tableware-items">Tableware Items</a>
+
+
+  </div>
+  </div>
+
+  <div class="dropdown">
+  <button class="dropbtn">Health and Beauty
+  <i class="fa fa-caret-down"></i>
+  </button>
+
+  <div class="dropdown-content">
+  <a href="#aroma-diffuser&fragrance-items">Aroma Diffuser & Fragrance Items</a>
+  <a href="#body-wash-items">Body Wash Items</a>
+  <a href="#cases-and-pouches">Cases and Pouches</a>
+  <a href="#hair-maintenance">Hair Maintenance</a>
+  <a href="#make-up">Make-Up</a>
+  <a href="#make-up-tools">Make-Up Tools</a>
+  <a href="#neck-cushions">Neck Cushions</a>
+  <a href="#pp-make-up-boxes">PP Make-Up Boxes</a>
+  <a href="#sanitary-items">Sanitary Items</a>
+  <a href="#skincare-items">Skincare Items</a>
+  <a href="#small-containers">Small Containers</a>
+  <a href="#toothbrushes">Toothbrushes</a>
+
+
+  </div>
+  </div>
+
+  <div class="dropdown">
+  <button class="dropbtn">Electronics
+  <i class="fa fa-caret-down"></i>
+  </button>
+
+  <div class="dropdown-content">
+  <a href="#mobile-phones">Mobile Phones</a>
+  <a href="#high-tech-gadgets">High-Tech Gadgets</a>
+
+  </div>
+  </div>
+
+
+  <div class="dropdown">
+  <button class="dropbtn">Men's Wear
+  <i class="fa fa-caret-down"></i>
+  </button>
+
+  <div class="dropdown-content">
+  <a href="#t-shirts">T-Shirts</a>
+  <a href="#polos">Polos</a>
+  <a href="#shirts">Shirts</a>
+  <a href="#sweaters-and-cardigans">Sweaters and Cardigans</a>
+  <a href="#outwear">Outwear</a>
+  <a href="#pants">Pants</a>
+  <a href="#underwear-loungewear-sleepwear">Underwear, Loungewear, Sleepwear</a>
+
+
+  </div>
+  </div>
+
+  <div class="dropdown">
+  <button class="dropbtn">Ladies' Wear
+  <i class="fa fa-caret-down"></i>
+  </button>
+
+  <div class="dropdown-content">
+  <a href="#t-shirts">T-Shirts</a>
+  <a href="#tops">Tops</a>
+  <a href="#sweaters-and-cardigans">Sweaters and Cardigans</a>
+  <a href="#outwear">Outwear</a>
+  <a href="#dresses-and-skirts">Dresses and Skirts</a>
+  <a href="#pants-and-leggings">Pants and Leggings</a>
+  <a href="#one-size">One Size</a>
+  <a href="#underwear-loungewear-and-sleepwear">Underwear, Loungewear, and Sleepwear</a>
+
+
+  </div>
+  </div>
+
+  <div class="dropdown">
+  <button class="dropbtn">Accessories
+  <i class="fa fa-caret-down"></i>
+  </button>
+
+  <div class="dropdown-content">
+  <a href="#face-masks">Face Masks</a>
+  <a href="#caps-and-hats">Caps and Hats</a>
+  <a href="#stoles-and-mufflers">Stoles and Mufflers</a>
+  <a href="#winter-accessories">Winter Accessories</a>
+  <a href="#socks">Socks</a>
+  <a href="#umbrella">Umbrella</a>
+
+
+  </div>
+  </div>
+
+  <div class="dropdown">
+  <button class="dropbtn">MORE ITEMS
+  <i class="fa fa-caret-down"></i>
+  </button>
+
+  <div class="dropdown-content">
+  <a href="#bags-and-shoes">Bags and Shoes</a>
+  <a href="#children's-wear">Children's Wear</a>
+
+  </div>
+  </div>
+  </div><br><br><br><br>
+
+
+<br>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="file:///D:/COMPUTER/classyu%23all-products-stationery.html">
+      <img src="stationery.jpg" alt="Stationery" width="600" height="400">
+    </a>
+    <div class="desc">Stationery</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="">
+      <img src="fabrics.jpg" alt="Fabrics" width="600" height="400">
+    </a>
+    <div class="desc">Fabrics</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="file:///D:/COMPUTER/classyu%23all-products_health-and-beauty.html">
+      <img src="health-and-beauty.jpg" alt="Health and Beauty" width="600" height="400">
+    </a>
+    <div class="desc">Health and Beauty</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="">
+      <img src="houseware.jpg" alt="Houseware" width="600" height="400">
+    </a>
+    <div class="desc">Houseware</div>
+  </div>
+</div>
+
+<br><br><hr><br>
+
+<center>
+<div class="pagination">
+  <a href="#">&laquo;</a>
+  <a class="active" href="file:///D:/COMPUTER/classyu%23view-all-products.html">1</a>
+  <a href="file:///D:/COMPUTER/classyu%23view-all-products_page2.html">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#">&raquo;</a>
+</div>
+</center>
+
+
+</body>
+</html>
